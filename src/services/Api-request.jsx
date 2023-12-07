@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 const API_KEY = '275d01b8b22dae96d546b5217250e569'
-const INIT_LOGO_SIZE = 'w185';
 const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/';
+const INIT_LOGO_SIZE = 'w185';
 const INIT_POSTER_SIZE_500 = 'w500';
 const INIT_POSTER_SIZE_92 = 'w92';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+const DEFAULT_IMAGE_PATH = '../Images/6689609.jpg';
 
 const paramsObj = {
   api_key: API_KEY,
@@ -56,4 +57,5 @@ export {
   INIT_LOGO_SIZE,
   INIT_POSTER_SIZE_500,
   INIT_POSTER_SIZE_92,
+  DEFAULT_IMAGE_PATH,
 };

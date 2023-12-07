@@ -1,10 +1,9 @@
 import { getTrending } from 'services/Api-request';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 const Home = () => {
-  const location = useLocation();
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
@@ -28,17 +27,9 @@ const Home = () => {
 
   return (
     <main>
-      <ul>
-        {trending &&
-          trending.map(item => (
-            <li key={item.id}>
-              <Link to={`/movies/${item.id}`} state={{ from: location }}>
-                {item.title}
-              </Link>
-            </li>
-          ))}
-      </ul>
+      <MoviesList movies={trending} />
     </main>
   );
 };
+
 export default Home;

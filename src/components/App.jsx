@@ -1,12 +1,14 @@
 import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import HeaderBox from './HeaderBox/HeaderBox';
 
-const HeaderBox = lazy(() => import('./HeaderBox/HeaderBox'));
+
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
+
 
 export const App = () => {
   return (
@@ -19,7 +21,7 @@ export const App = () => {
             <Route path="/movies/:movieId/cast" element={<Cast />} />
             <Route path="/movies/:movieId/reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </Suspense>

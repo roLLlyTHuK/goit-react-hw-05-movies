@@ -9,8 +9,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState(null);
   const location = useLocation();
-  const backLink = location.state?.from ?? '/';
-  const backLinkRef = useRef(backLink);
+  const backLinkRef = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const abortController = new AbortController();

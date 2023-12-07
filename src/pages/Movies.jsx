@@ -1,14 +1,14 @@
 import { searchMovies } from 'services/Api-request';
-import { SearchForm } from 'components/SearchForm/SearchForm';
-import { SearchList } from 'components/SearchList/SearchList';
 import { useEffect, useState } from 'react';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import MoviesList from 'components/MoviesList/MoviesList';
+import { SearchForm } from 'components/SearchForm/SearchForm';
 
 const Movies = () => {
   const [movies, setMovies] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
+  // const location = useLocation();
 
   const onSubmit = searchString => {
     const searchParams = searchString !== '' ? { search: searchString } : {};
@@ -42,8 +42,9 @@ const Movies = () => {
   return (
     <main>
       <SearchForm onSubmit={onSubmit} />
-      {movies && <SearchList movies={movies} from={location} />}
+      {movies && <MoviesList movies={movies} />}
     </main>
   );
 };
+
 export default Movies;

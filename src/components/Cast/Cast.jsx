@@ -28,7 +28,7 @@ const Cast = () => {
 
   return (
     <div>
-      {cast && (
+      {cast ?(
         <ul>
           {cast.map(item => (
             <Item key={item.id}>
@@ -40,7 +40,10 @@ const Cast = () => {
             </Item>
           ))}
         </ul>
-      )}
+      ) : (
+             <p> We don`t have any cast for this move</p>
+          )
+      }
     </div>
   );
 };
