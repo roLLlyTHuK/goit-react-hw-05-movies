@@ -1,4 +1,4 @@
-import { getMovieCredits, INIT_POSTER_SIZE_92, INIT_PATH_IMAGE } from "services/Api-request";
+import { getMovieCredits, INIT_POSTER_SIZE_92, INIT_PATH_IMAGE, DEFAULT_CAST_PATH } from "services/Api-request";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -28,12 +28,15 @@ const Cast = () => {
 
   return (
     <div>
-      {cast ?(
+      {cast && cast.length ?(
         <ul>
           {cast.map(item => (
             <Item key={item.id}>
               {item.profile_path && (
                 <img src={`${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_92}${item.profile_path}`} alt={item.name} />
+              )}
+               {!item.profile_path && (
+                <img src={DEFAULT_CAST_PATH} alt={item.name} />
               )}
               <p>{item.name}</p>
               <p>Character: {item.character}</p>
@@ -41,7 +44,7 @@ const Cast = () => {
           ))}
         </ul>
       ) : (
-             <p> We don`t have any cast for this move</p>
+             <p> We don`t find any cast for this move</p>
           )
       }
     </div>

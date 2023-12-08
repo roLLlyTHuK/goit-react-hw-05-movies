@@ -1,12 +1,16 @@
-import { INIT_PATH_IMAGE, INIT_POSTER_SIZE_500, DEFAULT_IMAGE_PATH } from 'services/Api-request';
+import { INIT_PATH_IMAGE, INIT_POSTER_SIZE_500, DEFAULT_POSTER_PATH } from 'services/Api-request';
 import { WrapperMovie } from './MovieDetails.styled';
 
 export const MovieDetails = ({ details }) => {
-  const posterPath = details.poster_path ? `${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_500}${details.poster_path}`: DEFAULT_IMAGE_PATH;
   return (
     <WrapperMovie>
       <div>
-        <img src={posterPath} alt={details.title} />
+        {details.poster_path && (
+          <img src={`${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_500}${details.poster_path}`} alt={details.name} />
+        )}
+        {!details.poster_path && (
+          <img src={DEFAULT_POSTER_PATH} alt={details.name} />
+        )}
       </div>
       <div>
         <h1>
