@@ -2,7 +2,7 @@ import {
   getMovieCredits,
   INIT_POSTER_SIZE_92,
   INIT_PATH_IMAGE,
-  } from 'services/Api-request';
+} from 'services/Api-request';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -43,7 +43,9 @@ const Cast = () => {
                   alt={item.name}
                 />
               )}
-              {!item.profile_path && <img src={foto} alt={item.name} />}
+              {!item.profile_path && (
+                <img src={foto} alt={item.name} height={138} />
+              )}
               <div>
                 <span>{item.name}</span>
                 <p>

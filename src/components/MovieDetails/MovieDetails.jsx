@@ -6,6 +6,7 @@ import {
 import { List, WrapperMovie } from './MovieDetails.styled';
 import { Link, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import svg from '../../Img/No-Image-Placeholder.svg.png';
 
 export const MovieDetails = ({ details }) => {
   return (
@@ -18,7 +19,7 @@ export const MovieDetails = ({ details }) => {
           />
         )}
         {!details.poster_path && (
-          <img src={DEFAULT_POSTER_PATH} alt={details.name} />
+          <img src={svg} alt={details.name} width={500} />
         )}
       </div>
       <div>
@@ -26,7 +27,7 @@ export const MovieDetails = ({ details }) => {
           {details.title} ({details.release_date.split('-')[0]})
         </h1>
         <p className="rating">
-          User's rating: <span>{details.vote_average.toFixed(2)}</span>{' '}
+          User's rating: <span>{Math.round(details.vote_average * 10)}%</span>
         </p>
         <h2>Overview:</h2>
         <p>{details.overview}</p>
