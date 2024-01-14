@@ -35,7 +35,7 @@ export const MovieDetails = ({ details }) => {
           Genres:{' '}
           <span>{details.genres.map(genre => genre.name).join(', ')}</span>
         </h2>
-        <p></p>
+
         <List>
           <li>
             <Link to="cast">Cast</Link>

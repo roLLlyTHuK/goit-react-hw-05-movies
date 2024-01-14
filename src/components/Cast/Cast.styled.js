@@ -14,7 +14,7 @@ export const Item = styled.li`
   flex-direction: row;
   align-items: center;
   gap: 10px;
-
+  /* margin-top: 20px; */
   background-color: rgba(255, 165, 0, 0.2);
   border: 1px solid orange;
   border-radius: 16px;
@@ -30,5 +30,13 @@ export const Item = styled.li`
   span {
     font-size: 20px;
     font-weight: 500;
+  }
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid orange;
+    box-shadow: 0px 5px 5px orange;
+    color: orange;
   }
 `;

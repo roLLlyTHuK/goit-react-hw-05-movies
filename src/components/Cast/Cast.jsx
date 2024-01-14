@@ -48,9 +48,9 @@ const Cast = () => {
               )}
               <div>
                 <span>{item.name}</span>
-                <p>
+                <div>
                   Character: <span>{item.character}</span>
-                </p>
+                </div>
               </div>
             </Item>
           ))}

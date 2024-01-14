@@ -33,11 +33,11 @@ const Reviews = () => {
           {reviews.map(item => (
             <li key={item.id}>
               <span>{item.author}</span>
-              <p>
+              <div>
                 <b>Posted at: </b>
                 {new Date(item.updated_at).toLocaleDateString()}
-              </p>
-              <p>{item.content}</p>
+              </div>
+              <div>{item.content}</div>
             </li>
           ))}
         </List>
@@ -56,6 +56,7 @@ const List = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  margin-top: 20px;
 
   li {
     display: flex;
@@ -73,8 +74,8 @@ const List = styled.ul`
       font-weight: 500;
       font-size: 20px;
     }
-    p {
-      padding: 0;
+    div {
+      padding: 5px;
       margin: 0;
       text-align: justify;
       word-wrap: break-word;

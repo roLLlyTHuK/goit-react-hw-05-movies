@@ -10,6 +10,16 @@ export const WrapperMovie = styled.div`
     margin: 0;
     padding: 0;
   }
+  p {
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid orange;
+    border-radius: 16px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    width: fit-content;
+    text-align: justify;
+    transition: 0.3s ease-in-out;
+  }
   img {
     position: sticky;
     top: 100px;
@@ -36,6 +46,13 @@ export const WrapperMovie = styled.div`
   h2 {
     span {
       font-size: 16px;
+      font-weight: 500;
+      background-color: rgba(255, 165, 0, 0.2);
+      border: 1px solid orange;
+      border-radius: 16px;
+      padding: 5px 10px;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      text-transform: uppercase;
     }
   }
   @media only screen and (max-width: 768px) {
@@ -64,7 +81,6 @@ export const List = styled.ul`
     border: 1px solid gray;
     box-shadow: 0px 5px 5px lightgray;
     padding: 5px 10px;
-
     transition: 0.3s ease-in-out;
     &:hover {
       transform: scale(1.1);
