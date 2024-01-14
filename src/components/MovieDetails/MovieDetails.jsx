@@ -1,16 +1,12 @@
-import {
-  INIT_PATH_IMAGE,
-  INIT_POSTER_SIZE_500,
-  DEFAULT_POSTER_PATH,
-} from 'services/Api-request';
-import { List, WrapperMovie } from './MovieDetails.styled';
+import { INIT_PATH_IMAGE, INIT_POSTER_SIZE_500 } from 'services/Api-request';
+import { List, Container } from './MovieDetails.styled';
 import { Link, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import svg from '../../Img/No-Image-Placeholder.svg.png';
 
 export const MovieDetails = ({ details }) => {
   return (
-    <WrapperMovie>
+    <Container>
       <div>
         {details.poster_path && (
           <img
@@ -51,6 +47,6 @@ export const MovieDetails = ({ details }) => {
           <Outlet />
         </Suspense>
       </div>
-    </WrapperMovie>
+    </Container>
   );
 };

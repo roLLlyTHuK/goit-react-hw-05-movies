@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const WrapperMovie = styled.div`
+export const Container = styled.div`
   display: flex;
   gap: 20px;
   width: 95vw;
@@ -23,6 +23,11 @@ export const WrapperMovie = styled.div`
   img {
     position: sticky;
     top: 100px;
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid orange;
+    border-radius: 16px;
+
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   }
   .rating {
     width: 160px;

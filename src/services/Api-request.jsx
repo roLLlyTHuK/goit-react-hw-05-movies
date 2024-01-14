@@ -6,7 +6,6 @@ const INIT_LOGO_SIZE = 'w185';
 const INIT_POSTER_SIZE_500 = 'w500';
 const INIT_POSTER_SIZE_92 = 'w92';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-const DEFAULT_POSTER_PATH = 'https://via.placeholder.com/500';
 
 const paramsObj = {
   api_key: API_KEY,
@@ -83,5 +82,4 @@ export {
   INIT_LOGO_SIZE,
   INIT_POSTER_SIZE_500,
   INIT_POSTER_SIZE_92,
-  DEFAULT_POSTER_PATH,
 };
