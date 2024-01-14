@@ -1,8 +1,13 @@
-import { getMovieCredits, INIT_POSTER_SIZE_92, INIT_PATH_IMAGE, DEFAULT_CAST_PATH } from "services/Api-request";
+import {
+  getMovieCredits,
+  INIT_POSTER_SIZE_92,
+  INIT_PATH_IMAGE,
+  } from 'services/Api-request';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { Item } from './Cast.styled';
+import { List, Item } from './Cast.styled';
+import foto from '../../Img/avatar.webp';
 
 const Cast = () => {
   const [cast, setCast] = useState();
@@ -28,25 +33,29 @@ const Cast = () => {
 
   return (
     <div>
-      {cast && cast.length ?(
-        <ul>
+      {cast && cast.length ? (
+        <List>
           {cast.map(item => (
             <Item key={item.id}>
               {item.profile_path && (
-                <img src={`${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_92}${item.profile_path}`} alt={item.name} />
+                <img
+                  src={`${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_92}${item.profile_path}`}
+                  alt={item.name}
+                />
               )}
-               {!item.profile_path && (
-                <img src={DEFAULT_CAST_PATH} alt={item.name} />
-              )}
-              <p>{item.name}</p>
-              <p>Character: {item.character}</p>
+              {!item.profile_path && <img src={foto} alt={item.name} />}
+              <div>
+                <span>{item.name}</span>
+                <p>
+                  Character: <span>{item.character}</span>
+                </p>
+              </div>
             </Item>
           ))}
-        </ul>
+        </List>
       ) : (
-             <p> We don`t find any cast for this move</p>
-          )
-      }
+        <p> We don`t find any cast for this move</p>
+      )}
     </div>
   );
 };

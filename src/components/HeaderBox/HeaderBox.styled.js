@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   margin: 0 auto;
+  position: relative;
+  top: 0;
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -19,6 +21,11 @@ export const Navigation = styled.nav`
 `;
 
 export const Header = styled.header`
-  box-shadow: 0px 5px 5px lightgray;
+  border-bottom: 1px solid orange;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
 `;

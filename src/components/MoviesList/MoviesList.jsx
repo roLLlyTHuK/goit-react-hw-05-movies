@@ -1,19 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { INIT_POSTER_SIZE_500, INIT_PATH_IMAGE } from 'services/Api-request';
+import styled from 'styled-components';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();
-  console.log('movies :>> ', movies);
   return (
-    <ul
-      style={{
-        listStyle: 'none',
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '20px',
-        alignItems: 'center',
-      }}
-    >
+    <List>
       {movies &&
         movies.map(item => (
           <li key={item.id} style={{ width: '250px' }}>
@@ -27,8 +19,36 @@ const MoviesList = ({ movies }) => {
             </Link>
           </li>
         ))}
-    </ul>
+    </List>
   );
 };
 
 export default MoviesList;
+
+const List = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 90vw;
+  margin: 20px auto;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 8px;
+      box-shadow: 0px 5px 5px lightgray;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+`;

@@ -1,14 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import HeaderBox from './HeaderBox/HeaderBox';
-
+import Trailer from './Trailer/Trailer';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
-
 
 export const App = () => {
   return (
@@ -20,6 +19,7 @@ export const App = () => {
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="/movies/:movieId/cast" element={<Cast />} />
             <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+            <Route path="/movies/:movieId/trailer" element={<Trailer />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
@@ -27,4 +27,3 @@ export const App = () => {
     </Suspense>
   );
 };
-

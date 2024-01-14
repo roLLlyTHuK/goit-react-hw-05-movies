@@ -36,17 +36,6 @@ const MovieDetailsPage = () => {
         <div>
           <Back to={backLinkRef.current} />
           <MovieDetails details={details} />
-          <ul>
-            <li>
-              <Link to="cast">Cast</Link>
-            </li>
-            <li>
-              <Link to="reviews">Reviews</Link>
-            </li>
-          </ul>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-          </Suspense>
         </div>
       )}
     </main>
