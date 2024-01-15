@@ -42,12 +42,13 @@ const List = styled.ul`
 
 const Item = styled.li`
   img {
+    transform: scale(0.9);
     border: 1px solid orange;
     border-radius: 8px;
     box-shadow: 0px 5px 5px lightgray;
     transition: 0.3s ease-in-out;
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1);
       transition: 0.3s ease-in-out;
       background-color: rgba(255, 165, 0, 0.2);
       box-shadow: 0px 5px 5px orange;

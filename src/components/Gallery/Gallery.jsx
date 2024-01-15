@@ -52,7 +52,7 @@ const Gallery = ({ movies }) => {
       <Slider {...settings}>
         {movies &&
           movies.map(item => (
-            <li key={item.id} style={{ width: '250px' }}>
+            <Item key={item.id} style={{ width: '250px' }}>
               <Link to={`/movies/${item.id}`} state={{ from: location }}>
                 {item.poster_path && (
                   <img
@@ -67,7 +67,7 @@ const Gallery = ({ movies }) => {
                   </div>
                 )}
               </Link>
-            </li>
+            </Item>
           ))}
       </Slider>
     </Container>
