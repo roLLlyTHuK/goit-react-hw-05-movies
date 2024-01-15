@@ -45,4 +45,7 @@ export const Header = styled.header`
   top: 0;
   background-color: white;
   z-index: 10;
+  @media only screen and (max-width: 480px) {
+    position: relative;
+  }
 `;

@@ -21,4 +21,3 @@ const HeaderBox = () => {
   );
 };
 export default HeaderBox;
-

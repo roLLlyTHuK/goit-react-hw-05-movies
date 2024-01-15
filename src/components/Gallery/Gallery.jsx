@@ -13,28 +13,27 @@ const Gallery = ({ movies }) => {
     dots: true,
     infinite: true,
     speed: 2000,
-    slidesToShow: 7,
+    slidesToShow: 6,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 2000,
-    focusOnSelect: true,
-    useTransform: true,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -43,6 +42,7 @@ const Gallery = ({ movies }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,
         },
       },
     ],
@@ -57,7 +57,6 @@ const Gallery = ({ movies }) => {
                 {item.poster_path && (
                   <img
                     src={`${INIT_PATH_IMAGE}${INIT_POSTER_SIZE_500}${item.poster_path}`}
-                    width="250"
                     alt={item.title}
                   />
                 )}
