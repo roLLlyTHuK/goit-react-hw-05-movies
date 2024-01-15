@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+
 
 const API_KEY = '275d01b8b22dae96d546b5217250e569';
 const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/';
