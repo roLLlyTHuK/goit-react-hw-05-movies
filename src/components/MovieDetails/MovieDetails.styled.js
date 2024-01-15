@@ -95,5 +95,11 @@ export const List = styled.ul`
       box-shadow: 0px 5px 5px orange;
       color: orange;
     }
+    &.active {
+      background-color: rgba(255, 165, 0, 0.2);
+      border: 1px solid orange;
+      box-shadow: 0px 5px 5px orange;
+      color: orange;
+    }
   }
 `;

@@ -1,12 +1,15 @@
-import { searchMovies } from 'services/Api-request';
+import { searchMovies, upcomingMovies } from 'services/Api-request';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import MoviesList from 'components/MoviesList/MoviesList';
 import { SearchForm } from 'components/SearchForm/SearchForm';
+import Gallery from 'components/Gallery/Gallery';
 
 const Movies = () => {
   const [movies, setMovies] = useState();
+  const [upcoming, setUpcoming] = useState();
+  const [dates, setDates] = useState({ maximum: '', minimum: '' });
   const [searchParams, setSearchParams] = useSearchParams();
   // const location = useLocation();
 
@@ -20,6 +23,17 @@ const Movies = () => {
     const searchString = searchParams.get('search');
 
     if (!searchString) {
+      const upcomingList = async abortController => {
+        try {
+          const list = await upcomingMovies(abortController);
+          setUpcoming(list.data.results);
+          setDates(list.data.dates);
+        } catch (error) {
+          if (error.message !== 'canceled') toast.error(error.message);
+        }
+      };
+
+      upcomingList(abortController);
       return;
     }
 
@@ -38,11 +52,24 @@ const Movies = () => {
       abortController.abort();
     };
   }, [searchParams]);
+  console.log('upcoming :>> ', upcoming);
+  console.log('dates :>> ', dates);
 
   return (
     <main>
       <SearchForm onSubmit={onSubmit} />
       {movies && <MoviesList movies={movies} />}
+      {upcoming && (
+        <div>
+          <h1 style={{ textAlign: 'center' }}>
+            Movies that are being released
+          </h1>
+          <p style={{ textAlign: 'center', fontSize: '20px' }}>
+            in {dates.minimum} - {dates.maximum} :
+          </p>
+          <Gallery movies={upcoming} />
+        </div>
+      )}
     </main>
   );
 };

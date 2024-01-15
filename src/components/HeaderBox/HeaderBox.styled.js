@@ -8,9 +8,26 @@ export const Container = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
+  text-decoration: none;
   color: black;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 0px 5px 5px lightgray;
+  padding: 5px 10px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid orange;
+    box-shadow: 0px 5px 5px orange;
+    color: orange;
+  }
 
   &.active {
+    background-color: rgba(255, 165, 0, 0.2);
+    border: 1px solid orange;
+    box-shadow: 0px 5px 5px orange;
     color: orange;
   }
 `;

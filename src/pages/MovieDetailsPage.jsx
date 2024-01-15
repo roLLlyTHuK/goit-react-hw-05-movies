@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
-import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { Back } from 'components/Back/Back';
 import { toast } from 'react-toastify';

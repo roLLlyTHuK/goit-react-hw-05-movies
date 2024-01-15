@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const API_KEY = '275d01b8b22dae96d546b5217250e569';
 const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/';
@@ -25,6 +26,13 @@ const searchMovies = async (title, abortController) => {
   };
   const params = new URLSearchParams(paramsObjSearch);
   return await axios.get(`/search/movie?${params}`, {
+    signal: abortController.signal,
+  });
+};
+
+const upcomingMovies = async abortController => {
+  const params = new URLSearchParams(paramsObj);
+  return await axios.get(`/movie/upcoming?${params}`, {
     signal: abortController.signal,
   });
 };
@@ -72,6 +80,7 @@ const getConfiguration = async () => {
 export {
   getTrending,
   searchMovies,
+  upcomingMovies,
   getMovieDetails,
   getMovieCredits,
   getMovieReviews,
