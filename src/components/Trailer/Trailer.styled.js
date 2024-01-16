@@ -5,7 +5,7 @@ const Container = styled.div`
   width: 100%;
   iframe {
     border-radius: 8px;
-    width: 720px;
+    width: 640px;
     aspect-ratio: 16/9;
     padding: 8px;
     background-color: rgba(255, 255, 255, 0.4);
