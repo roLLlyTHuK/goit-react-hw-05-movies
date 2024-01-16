@@ -26,12 +26,12 @@ export const Item = styled.li`
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   border: 1px solid orange;
   border-radius: 16px;
   padding: 10px;
   margin: 4px auto;
   width: 300px;
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   transition: 0.3s ease-out;
   cursor: default;
   @media only screen and (max-width: 768px) {

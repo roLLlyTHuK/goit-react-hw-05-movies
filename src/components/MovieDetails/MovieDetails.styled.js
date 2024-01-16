@@ -20,7 +20,11 @@ export const Container = styled.div`
   }
   #parallax-container {
     height: fit-content;
-    padding: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    border-radius: 16px;
     img {
       top: 100px;
       background-color: rgba(255, 165, 0, 0.2);
