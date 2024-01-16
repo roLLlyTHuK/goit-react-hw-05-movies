@@ -74,18 +74,17 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 40px;
   padding: 0;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 30px;
 
   li a {
     text-decoration: none;
     color: black;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(5px);
-    border-radius: 5px;
+    border-radius: 16px;
     border: 1px solid gray;
     box-shadow: 0px 5px 5px #949484;
     padding: 5px 10px;
