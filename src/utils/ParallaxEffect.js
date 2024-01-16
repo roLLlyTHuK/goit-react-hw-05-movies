@@ -9,7 +9,7 @@ const ParallaxEffect = ({ children }) => {
   };
 
   const handleMouseLeave = () => {
-    setMousePosition({ x: 0, y: 0 });
+    setMousePosition({ x: -0, y: -0 });
   };
 
   useEffect(() => {
@@ -26,8 +26,8 @@ const ParallaxEffect = ({ children }) => {
     style: {
       ...children.props.style,
       transform: `perspective(1000px) rotateX(${
-        (mousePosition.y / window.innerHeight) * -10
-      }deg) rotateY(${(mousePosition.x / window.innerWidth) * -5}deg)`,
+        (mousePosition.y / window.innerHeight) * -20
+      }deg) rotateY(${(mousePosition.x / window.innerWidth) * -20}deg)`,
     },
   });
 };

@@ -19,8 +19,8 @@ const List = styled.ul`
   list-style: none;
   padding: 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   gap: 20px;
   margin-top: 20px;
 
@@ -36,7 +36,7 @@ const List = styled.ul`
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
     padding: 10px 10px;
     transition: 0.3s;
-    width: 600px;
+    width: 95%;
     span {
       font-weight: 500;
       font-size: 20px;
@@ -45,7 +45,7 @@ const List = styled.ul`
       padding: 5px;
       margin: 0;
       text-align: justify;
-      word-wrap: break-word;
+      line-height: 1.5;
     }
   }
 `;

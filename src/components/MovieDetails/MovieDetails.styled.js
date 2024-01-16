@@ -15,6 +15,7 @@ export const Container = styled.div`
     padding: 5px 10px;
     width: fit-content;
     text-align: justify;
+    line-height: 1.5;
     transition: 0.3s ease-in-out;
   }
   #parallax-container {
@@ -51,6 +52,8 @@ export const Container = styled.div`
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(5px);
     border-radius: 16px;
+    margin-bottom: 40px;
+    width: fit-content;
   }
 
   h2 {
@@ -78,6 +81,7 @@ export const List = styled.ul`
   padding: 0;
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 40px;
 
   li a {
     text-decoration: none;

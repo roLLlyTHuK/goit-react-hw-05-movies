@@ -18,7 +18,8 @@ const Gallery = ({ movies }) => {
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnHover: false,
+    pauseOnHover: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,

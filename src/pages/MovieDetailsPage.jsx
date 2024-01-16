@@ -34,11 +34,10 @@ const MovieDetailsPage = () => {
   return (
     <main
       style={{
-        background: `url(${INIT_PATH_IMAGE}${path}) center/cover no-repeat, linear-gradient(24deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)`,
-
+        background: `url(${INIT_PATH_IMAGE}${path}) center/cover no-repeat`,
         margin: '0',
         padding: '0',
-        height: '94vh',
+        minHeight: '93vh',
         minWidth: '95vw',
         overflow: 'auto',
       }}
