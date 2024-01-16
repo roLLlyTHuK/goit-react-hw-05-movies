@@ -29,11 +29,11 @@ export const Item = styled.li`
   backdrop-filter: blur(5px);
   border: 1px solid orange;
   border-radius: 16px;
-  padding: 0;
+  padding: 10px;
   margin: 0 auto;
   width: 300px;
   box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-  transition: 0.3s;
+  transition: 0.3s ease-out;
   cursor: default;
   @media only screen and (max-width: 768px) {
     margin: 0 auto;
