@@ -14,29 +14,28 @@ const Container = styled.div`
     width: 100%;
     input {
       width: 300px;
-      height: 30px;
+      height: 60px;
       border-radius: 5px 0 0 5px;
       border: 1px solid gray;
       border-right: none;
       padding: 5px;
-      font-size: 16px;
+      font-size: 20px;
       background-color: transparent;
       outline: none;
       transition: 0.3s;
       &:focus {
         box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
         text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-        transition: 0.3s;
+        transition: 0.3s ease-in-out;
         border: 1px solid orange;
         border-right: none;
         background-color: rgba(255, 165, 0, 0.2);
-        color: orange;
+        color: white;
       }
     }
     button {
-      all: unset;
-      width: 30px;
-      height: 30px;
+      width: 60px;
+      height: 60px;
       padding: 5px;
       background-color: transparent;
       border: 1px solid gray;
@@ -51,9 +50,8 @@ const Container = styled.div`
     }
     input:focus + button,
     button:hover {
-      color: orange;
-      transition: 0.3s;
-
+      color: white;
+      transition: 0.3s ease-in-out;
       transform-origin: center;
       border-radius: 5px;
       border: 1px solid orange;
@@ -61,7 +59,6 @@ const Container = styled.div`
       padding: 5px;
       background-color: rgba(255, 165, 0, 0.2);
       box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-      text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
     }
   }
 `;
