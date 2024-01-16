@@ -6,7 +6,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { List, Item } from './Cast.styled';
+import { List, Item, Container } from './Cast.styled';
 import foto from '../../Img/avatar.webp';
 
 const Cast = () => {
@@ -32,7 +32,7 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <Container>
       {cast && cast.length ? (
         <List>
           {cast.map(item => (
@@ -58,7 +58,7 @@ const Cast = () => {
       ) : (
         <p> We don`t find any cast for this move</p>
       )}
-    </div>
+    </Container>
   );
 };
 export default Cast;

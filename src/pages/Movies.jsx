@@ -11,7 +11,6 @@ const Movies = () => {
   const [upcoming, setUpcoming] = useState();
   const [dates, setDates] = useState({ maximum: '', minimum: '' });
   const [searchParams, setSearchParams] = useSearchParams();
-  // const location = useLocation();
 
   const onSubmit = searchString => {
     const searchParams = searchString !== '' ? { search: searchString } : {};
@@ -52,8 +51,6 @@ const Movies = () => {
       abortController.abort();
     };
   }, [searchParams]);
-  console.log('upcoming :>> ', upcoming);
-  console.log('dates :>> ', dates);
 
   return (
     <main>

@@ -2,7 +2,7 @@ import { getMovieReviews } from 'services/Api-request';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import List from './Reviews.styled';
+import List, { Container } from './Reviews.styled';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState();
@@ -27,7 +27,7 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <Container>
       {reviews && reviews.length ? (
         <List>
           {reviews.map(item => (
@@ -44,7 +44,7 @@ const Reviews = () => {
       ) : (
         <p>We don`t have any reviews for this move</p>
       )}
-    </div>
+    </Container>
   );
 };
 

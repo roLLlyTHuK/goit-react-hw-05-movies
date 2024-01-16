@@ -3,13 +3,14 @@ import { useParams, useLocation } from 'react-router-dom';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { Back } from 'components/Back/Back';
 import { toast } from 'react-toastify';
-import { getMovieDetails } from 'services/Api-request';
+import { getMovieDetails, INIT_PATH_IMAGE } from 'services/Api-request';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState(null);
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from ?? '/');
+  const path = `original/${details?.backdrop_path}`;
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -31,7 +32,17 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   return (
-    <main>
+    <main
+      style={{
+        background: `url(${INIT_PATH_IMAGE}${path}) center/cover no-repeat, linear-gradient(24deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)`,
+
+        margin: '0',
+        padding: '0',
+        height: '94vh',
+        minWidth: '95vw',
+        overflow: 'auto',
+      }}
+    >
       {details && (
         <div>
           <Back to={backLinkRef.current} />

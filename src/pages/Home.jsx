@@ -27,7 +27,9 @@ const Home = () => {
 
   return (
     <main>
-      <h1 style={{ textAlign: 'center' }}>Trending today:</h1>
+      <h1 style={{ textAlign: 'center', margin: '0', padding: '20px' }}>
+        Trending today:
+      </h1>
       <MoviesList movies={trending} />
     </main>
   );

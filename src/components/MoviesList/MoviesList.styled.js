@@ -10,6 +10,7 @@ const List = styled.ul`
   justify-content: center;
   padding: 0;
   width: 90vw;
+  height: 80vh;
   margin: 20px auto;
 
   li {
@@ -17,12 +18,16 @@ const List = styled.ul`
       border: 1px solid orange;
       border-radius: 8px;
       box-shadow: 0px 5px 5px lightgray;
-      transition: 0.3s ease-in-out;
+
+      transition: transform 0.3s ease-out; /* Анимация перехода */
+
       &:hover {
+        box-shadow: 0 0 100px rgba(255, 165, 0, 0.8);
+
         transform: scale(1.1);
-        transition: 0.3s ease-in-out;
+
         background-color: rgba(255, 165, 0, 0.2);
-        box-shadow: 0px 5px 5px orange;
+
         color: orange;
       }
     }

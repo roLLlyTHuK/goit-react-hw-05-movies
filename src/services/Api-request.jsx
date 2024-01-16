@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-
 const API_KEY = '275d01b8b22dae96d546b5217250e569';
 const INIT_PATH_IMAGE = 'http://image.tmdb.org/t/p/';
 const INIT_LOGO_SIZE = 'w185';
 const INIT_POSTER_SIZE_500 = 'w500';
+
 const INIT_POSTER_SIZE_92 = 'w92';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
@@ -15,6 +15,12 @@ const paramsObj = {
 const getTrending = async abortController => {
   const params = new URLSearchParams(paramsObj);
   return await axios.get(`/trending/movie/day?${params}`, {
+    signal: abortController.signal,
+  });
+};
+const getLocal = async abortController => {
+  const params = new URLSearchParams(paramsObj);
+  return await axios.get(`/configuration/languages?${params}`, {
     signal: abortController.signal,
   });
 };
@@ -79,6 +85,7 @@ const getConfiguration = async () => {
 
 export {
   getTrending,
+  getLocal,
   searchMovies,
   upcomingMovies,
   getMovieDetails,

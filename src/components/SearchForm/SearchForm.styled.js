@@ -48,20 +48,20 @@ const Container = styled.div`
       cursor: pointer;
       font-size: 20px;
       color: black;
-      &:hover {
-        color: orange;
-        transition: 0.3s;
-        transform: scale(1.1);
-        transform-origin: center;
-        border-radius: 5px;
-        border: 1px solid orange;
-        border-left: none;
-        padding: 5px;
-        background-color: rgba(255, 165, 0, 0.2);
-        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-        text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
-        transition: 0.3s;
-      }
+    }
+    input:focus + button,
+    button:hover {
+      color: orange;
+      transition: 0.3s;
+
+      transform-origin: center;
+      border-radius: 5px;
+      border: 1px solid orange;
+      border-left: none;
+      padding: 5px;
+      background-color: rgba(255, 165, 0, 0.2);
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
     }
   }
 `;
