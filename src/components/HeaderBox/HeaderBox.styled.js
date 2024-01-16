@@ -2,11 +2,12 @@ import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  margin: 0 auto;
   position: relative;
   background-color: transparent;
   backdrop-filter: blur(5px);
   top: 0;
+  margin: 0 auto;
+  height: fit-content;
 `;
 
 export const StyledLink = styled(NavLink)`
