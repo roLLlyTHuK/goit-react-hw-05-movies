@@ -13,7 +13,7 @@ const Gallery = ({ movies }) => {
     dots: true,
     infinite: true,
     speed: 2000,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,

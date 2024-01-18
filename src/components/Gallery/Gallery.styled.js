@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: block;
-  width: 96vw;
+  width: 85vw;
   margin: 20px auto;
-  border: 1px solid orange;
-  border-radius: 8px;
   padding: 0 20px;
 `;
 

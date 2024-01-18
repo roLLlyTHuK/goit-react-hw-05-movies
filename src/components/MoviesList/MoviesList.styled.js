@@ -8,7 +8,7 @@ const List = styled.ul`
   gap: 20px;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 10px 0;
   width: 90vw;
   height: 80vh;
   margin: 20px auto;

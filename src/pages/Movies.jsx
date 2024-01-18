@@ -55,7 +55,6 @@ const Movies = () => {
   return (
     <main>
       <SearchForm onSubmit={onSubmit} />
-      {movies && <MoviesList movies={movies} />}
       {upcoming && (
         <div>
           <h1 style={{ textAlign: 'center' }}>
@@ -67,6 +66,7 @@ const Movies = () => {
           <Gallery movies={upcoming} />
         </div>
       )}
+      {movies && <MoviesList movies={movies} />}
     </main>
   );
 };
